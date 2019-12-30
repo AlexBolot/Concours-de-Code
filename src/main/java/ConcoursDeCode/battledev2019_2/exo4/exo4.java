@@ -1,6 +1,8 @@
 package ConcoursDeCode.battledev2019_2.exo4;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 /*................................................................................................................................
  . Copyright (c)
@@ -43,7 +45,7 @@ public class exo4 {
 
     }
 
-    private static class Stone{
+    private static class Stone {
         int value;
         int weight;
 
@@ -61,7 +63,7 @@ public class exo4 {
         }
     }
 
-    private static class Powder{
+    private static class Powder {
         int value;
         int quantity;
 

@@ -14,32 +14,27 @@ import java.util.Arrays;
  ...............................................................................................................................*/
 
 /**
- Created by Luecx on 09.08.2017.
+ * Created by Luecx on 09.08.2017.
  */
-public class TrainSet
-{
+public class TrainSet {
     private final int inputSize;
     private final int outputSize;
 
     //double[][] <- index1: 0 = input, 1 = output || index2: index of element
     private ArrayList<double[][]> data = new ArrayList<>();
 
-    public TrainSet (int inputSize, int outputSize)
-    {
+    public TrainSet(int inputSize, int outputSize) {
         this.inputSize = inputSize;
         this.outputSize = outputSize;
     }
 
-    public static void main (String[] args)
-    {
+    public static void main(String[] args) {
         TrainSet set = new TrainSet(3, 2);
 
-        for (int i = 0; i < 8; i++)
-        {
+        for (int i = 0; i < 8; i++) {
             double[] a = new double[3];
             double[] b = new double[2];
-            for (int k = 0; k < 3; k++)
-            {
+            for (int k = 0; k < 3; k++) {
                 a[k] = (double) ((int) (Math.random() * 10)) / (double) 10;
                 if (k < 2) b[k] = (double) ((int) (Math.random() * 10)) / (double) 10;
             }
@@ -50,61 +45,50 @@ public class TrainSet
         System.out.println(set.extractBatch(3));
     }
 
-    public void addData (double[] in, double[] expected)
-    {
+    public void addData(double[] in, double[] expected) {
         if (in.length != inputSize || expected.length != outputSize) return;
         data.add(new double[][]{in, expected});
     }
 
-    public TrainSet extractBatch (int size)
-    {
-        if (size > 0 && size <= this.size())
-        {
+    public TrainSet extractBatch(int size) {
+        if (size > 0 && size <= this.size()) {
             TrainSet set = new TrainSet(inputSize, outputSize);
             Integer[] ids = NeuralNetworkTools.randomValues(0, this.size() - 1, size);
 
             Arrays.stream(ids).forEach(i -> set.addData(this.getInput(i), this.getOutput(i)));
 
             return set;
-        }
-        else return this;
+        } else return this;
     }
 
-    public String toString ()
-    {
+    public String toString() {
         StringBuilder s = new StringBuilder("TrainSet [" + inputSize + " ; " + outputSize + "]\n");
         int index = 0;
 
-        for (double[][] r : data)
-        {
+        for (double[][] r : data) {
             s.append(index).append(":   ").append(Arrays.toString(r[0])).append("  >-||-<  ").append(Arrays.toString(r[1])).append("\n");
             index++;
         }
         return s.toString();
     }
 
-    public int size ()
-    {
+    public int size() {
         return data.size();
     }
 
-    public double[] getInput (int index)
-    {
+    public double[] getInput(int index) {
         return index >= 0 && index < size() ? data.get(index)[0] : null;
     }
 
-    public double[] getOutput (int index)
-    {
+    public double[] getOutput(int index) {
         return index >= 0 && index < size() ? data.get(index)[1] : null;
     }
 
-    public int inputSize ()
-    {
+    public int inputSize() {
         return inputSize;
     }
 
-    public int outputSize ()
-    {
+    public int outputSize() {
         return outputSize;
     }
 }

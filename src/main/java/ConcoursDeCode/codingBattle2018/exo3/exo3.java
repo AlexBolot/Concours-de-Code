@@ -14,10 +14,8 @@ import java.util.Scanner;
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public class exo3
-{
-    public static void main (String... args)
-    {
+public class exo3 {
+    public static void main(String... args) {
         Scanner scanner = new Scanner(System.in);
 
         String firstLine = scanner.nextLine();
@@ -29,17 +27,14 @@ public class exo3
         int numberOfFriends = Integer.valueOf(secondLine);
         int numberOfBFF = Integer.valueOf(thridLine);
 
-        for (String string : firstLine.split(" "))
-        {
+        for (String string : firstLine.split(" ")) {
             myGrades.add(Integer.valueOf(string));
         }
 
-        for (int i = 0; i < numberOfFriends; i++)
-        {
+        for (int i = 0; i < numberOfFriends; i++) {
             ArrayList<Integer> grades = new ArrayList<>();
 
-            for (String s : scanner.nextLine().split(" "))
-            {
+            for (String s : scanner.nextLine().split(" ")) {
                 grades.add(Integer.valueOf(s));
             }
 
@@ -47,23 +42,20 @@ public class exo3
         }
 
         ArrayList<ArrayList<Integer>> sortedValues = new ArrayList<>();
-        for (ArrayList<Integer> friendsGrade : friendsGrades)
-        {
+        for (ArrayList<Integer> friendsGrade : friendsGrades) {
             sortedValues.add(friendsGrade);
         }
         sortedValues.sort(Comparator.comparingInt(o -> getDistance(myGrades, o)));
 
         ArrayList<Integer> bob = new ArrayList<>();
 
-        for (int i = 0; i < numberOfBFF; i++)
-        {
+        for (int i = 0; i < numberOfBFF; i++) {
             bob.add(sortedValues.get(i).get(sortedValues.get(i).size() - 1));
         }
 
         int result = 0;
 
-        for (int i : bob)
-        {
+        for (int i : bob) {
             result += i;
         }
 
@@ -72,12 +64,10 @@ public class exo3
         System.out.println(result);
     }
 
-    private static int getDistance (ArrayList<Integer> myGrades, ArrayList<Integer> hisGrades)
-    {
+    private static int getDistance(ArrayList<Integer> myGrades, ArrayList<Integer> hisGrades) {
         int distance = 0;
 
-        for (int i = 0; i < myGrades.size(); i++)
-        {
+        for (int i = 0; i < myGrades.size(); i++) {
             distance += Math.abs(myGrades.get(i) - hisGrades.get(i));
         }
 

@@ -11,10 +11,8 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class a_paris
-{
-    public static void main (String... args)
-    {
+public class a_paris {
+    public static void main(String... args) {
         Scanner sc = new Scanner(System.in);
 
         int p = Integer.parseInt(sc.nextLine());
@@ -25,13 +23,12 @@ public class a_paris
 
         if (n != split.length) return;
 
-        int tab[] = new int[n];
+        int[] tab = new int[n];
 
         String s;
         int val;
 
-        for (int i = 0; i < n; i++)
-        {
+        for (int i = 0; i < n; i++) {
             s = split[i];
 
             val = Integer.parseInt(s);
@@ -43,12 +40,9 @@ public class a_paris
 
         float mediane;
 
-        if (n % 2 == 0)
-        {
+        if (n % 2 == 0) {
             mediane = ((float) (tab[(n / 2) - 1] + tab[(n / 2)])) / 2;
-        }
-        else
-        {
+        } else {
             mediane = tab[n / 2];
         }
 

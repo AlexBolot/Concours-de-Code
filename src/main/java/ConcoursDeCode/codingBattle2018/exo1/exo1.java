@@ -13,10 +13,8 @@ import java.util.Scanner;
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-public class exo1
-{
-    public static void main (String... args)
-    {
+public class exo1 {
+    public static void main(String... args) {
         Scanner sc = new Scanner(System.in);
 
         String firstLine = sc.nextLine();
@@ -25,14 +23,12 @@ public class exo1
 
         ArrayList<Double[]> allRatings = new ArrayList<>();
 
-        for (int i = 0; i < restaurantAmount; i++)
-        {
+        for (int i = 0; i < restaurantAmount; i++) {
             String[] split = sc.nextLine().split(" ");
 
             Double[] tmpRes = new Double[3];
 
-            for (int j = 0; j < split.length; j++)
-            {
+            for (int j = 0; j < split.length; j++) {
                 tmpRes[j] = Double.valueOf(split[j]);
             }
 
@@ -41,12 +37,10 @@ public class exo1
 
         ArrayList<Double> collect = new ArrayList<>();
 
-        for (Double[] array : allRatings)
-        {
+        for (Double[] array : allRatings) {
             Double sum = 0.0;
 
-            for (Double d : array)
-            {
+            for (Double d : array) {
                 sum += d;
             }
 

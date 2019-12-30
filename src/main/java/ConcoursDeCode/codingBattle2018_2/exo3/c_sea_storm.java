@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -62,7 +61,7 @@ public class c_sea_storm {
 
                     System.out.println("selected " + hatSize);
 
-                    for (int k = Math.max(position - hatRadius, 0); k <= Math.min(position + hatRadius, pont.size()-1); k++) {
+                    for (int k = Math.max(position - hatRadius, 0); k <= Math.min(position + hatRadius, pont.size() - 1); k++) {
                         pont.set(k, 1);
                     }
 

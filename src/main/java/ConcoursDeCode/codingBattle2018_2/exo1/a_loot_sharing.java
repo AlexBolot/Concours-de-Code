@@ -1,4 +1,3 @@
-
 /*................................................................................................................................
  . Copyright (c)
  .
@@ -23,9 +22,9 @@ public class a_loot_sharing {
         int t = sc.nextInt();
         int n = sc.nextInt();
 
-        int bgold = b*2;
+        int bgold = b * 2;
 
-        int tgold = t*3;
+        int tgold = t * 3;
 
         System.out.println(n >= (bgold + tgold) ? "LOOT!" : "RHUM!");
 

@@ -37,7 +37,7 @@ public class exo2 {
             }
         }
 
-        if(local !=0)
+        if (local != 0)
             moves++;
 
         System.out.println(moves);

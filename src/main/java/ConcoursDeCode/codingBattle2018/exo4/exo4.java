@@ -15,25 +15,20 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class exo4
-{
-    public static void main (String... args)
-    {
+public class exo4 {
+    public static void main(String... args) {
         Scanner sc = new Scanner(System.in);
 
         ArrayList<Integer> sizes = IntStream.range(0, 6).mapToObj(i -> sc.nextInt()).collect(Collectors.toCollection(ArrayList::new));
 
         int count = 0;
 
-        while (!isSorted(sizes))
-        {
+        while (!isSorted(sizes)) {
             int val = sizes.stream().max(Integer::compareTo).get();
             int indexOfVal = sizes.indexOf(val);
 
-            if (indexOfVal != sizes.size() - 1)
-            {
-                if (indexOfVal != 0)
-                {
+            if (indexOfVal != sizes.size() - 1) {
+                if (indexOfVal != 0) {
                     flip(sizes, indexOfVal);
                     count++;
                     if (isSorted(sizes)) break;
@@ -43,7 +38,7 @@ public class exo4
 
                 if (isSorted(sizes)) break;
 
-                count ++;
+                count++;
             }
             sizes.remove(sizes.size() - 1);
         }
@@ -51,12 +46,10 @@ public class exo4
         System.out.println(count);
     }
 
-    private static void flip (ArrayList<Integer> integers, int index)
-    {
+    private static void flip(ArrayList<Integer> integers, int index) {
         ArrayList<Integer> newValues = new ArrayList<>();
 
-        for (int i = index; i >= 0; i--)
-        {
+        for (int i = index; i >= 0; i--) {
             newValues.add(integers.remove(i));
         }
 
@@ -66,12 +59,10 @@ public class exo4
         integers.addAll(newValues);
     }
 
-    private static boolean isSorted (ArrayList<Integer> list)
-    {
+    private static boolean isSorted(ArrayList<Integer> list) {
         boolean sorted = true;
 
-        for (int i = 1; i < list.size(); i++)
-        {
+        for (int i = 1; i < list.size(); i++) {
             if (list.get(i - 1).compareTo(list.get(i)) > 0) sorted = false;
         }
 

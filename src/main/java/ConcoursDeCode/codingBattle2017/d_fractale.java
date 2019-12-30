@@ -10,16 +10,13 @@
 
 import java.util.Scanner;
 
-public class d_fractale
-{
-    public static void main (String... args)
-    {
+public class d_fractale {
+    public static void main(String... args) {
         Scanner sc = new Scanner(System.in);
 
         int a = Integer.parseInt(sc.nextLine());
 
-        switch (a)
-        {
+        switch (a) {
             case 0:
                 System.out.println("X");
                 break;

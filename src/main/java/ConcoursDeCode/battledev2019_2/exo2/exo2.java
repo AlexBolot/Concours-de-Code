@@ -10,7 +10,10 @@ package ConcoursDeCode.battledev2019_2.exo2;
  . Contact : bolotalex06@gmail.com
  ...............................................................................................................................*/
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
 
 public class exo2 {
     public static void main(String[] args) {

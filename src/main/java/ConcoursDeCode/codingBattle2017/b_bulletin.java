@@ -10,10 +10,8 @@
 
 import java.util.Scanner;
 
-public class b_bulletin
-{
-    public static void main (String... args)
-    {
+public class b_bulletin {
+    public static void main(String... args) {
         Scanner sc = new Scanner(System.in);
 
         int note = Integer.parseInt(sc.nextLine());
@@ -30,8 +28,7 @@ public class b_bulletin
         String[] allNotes = sc.nextLine().split(" ");
         int[] intNotes = new int[nCamarades + 1];
 
-        for (int i = 0; i < nCamarades; i++)
-        {
+        for (int i = 0; i < nCamarades; i++) {
             intNotes[i] = Integer.parseInt(allNotes[i]);
         }
 
@@ -44,36 +41,30 @@ public class b_bulletin
         else System.out.print("Jack ! Viens ici !");
     }
 
-    public static float moyenne (int[] tab)
-    {
+    public static float moyenne(int[] tab) {
         int sum = 0;
 
-        for (int i = 0; i < tab.length; i++)
-        {
+        for (int i = 0; i < tab.length; i++) {
             sum += tab[i];
         }
 
-       return (float) sum / tab.length;
+        return (float) sum / tab.length;
     }
 
-    public static int min (int[] tab)
-    {
+    public static int min(int[] tab) {
         int min = Integer.MAX_VALUE;
 
-        for (int i = 0; i < tab.length; i++)
-        {
+        for (int i = 0; i < tab.length; i++) {
             if (tab[i] < min) min = tab[i];
         }
 
         return min;
     }
 
-    public static int max (int[] tab)
-    {
+    public static int max(int[] tab) {
         int max = Integer.MIN_VALUE;
 
-        for (int i = 0; i < tab.length; i++)
-        {
+        for (int i = 0; i < tab.length; i++) {
             if (tab[i] > max) max = tab[i];
         }
 

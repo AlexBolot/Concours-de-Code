@@ -13,10 +13,8 @@ package ConcoursDeCode.codingBattle2018.exo2;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class exo2
-{
-    public static void main (String... args)
-    {
+public class exo2 {
+    public static void main(String... args) {
         Scanner scanner = new Scanner(System.in);
 
         String firstLine = scanner.nextLine();
@@ -25,8 +23,7 @@ public class exo2
         int peoplecount = Integer.parseInt(secondLine);
 
         ArrayList<Integer> peoplePerTable = new ArrayList<>();
-        for (int i = 0; i < peoplecount; i++)
-        {
+        for (int i = 0; i < peoplecount; i++) {
             Integer nextInt = scanner.nextInt();
             peoplePerTable.add(nextInt);
         }
@@ -34,8 +31,7 @@ public class exo2
 
         double totalPrice = 0d;
 
-        for (Integer value : peoplePerTable)
-        {
+        for (Integer value : peoplePerTable) {
             if (value >= 10) totalPrice += value * .7 * menuPrice;
             else if (value >= 6) totalPrice += value * .8 * menuPrice;
             else if (value >= 4) totalPrice += value * .9 * menuPrice;
